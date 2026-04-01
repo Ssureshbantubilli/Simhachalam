@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: var(--font-playfair), 'Georgia', serif;
+  --font-body: var(--font-inter), 'system-ui', sans-serif;
+  --color-kumkum: #7A1C1C;
+  --color-gold: #D4AF37;
+  --color-sandal: #F5E6C8;
+}
+
+/* ─── Typography Utilities ──────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* Sanskrit / Devanagari shlokas — never translate */
+.shloka {
+  font-family: 'Noto Serif Devanagari', 'Mangal', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #D4AF37;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Glassmorphism card ────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 1rem;
+}
+
+/* ─── Gold shimmer effect ────────────────────────────────────── */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #D4AF37 0%,
+    #f5e6a3 40%,
+    #D4AF37 60%,
+    #a88c2a 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ─── Glow pulse ────────────────────────────────────────────── */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+.glow-gold:hover {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 2px; }
+
+/* ─── PWA safe areas ────────────────────────────────────────── */
+.safe-top    { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+/* ─── High contrast mode (sunlight) ────────────────────────── */
+@media (prefers-contrast: high) {
+  .text-white\/40 { color: rgba(255,255,255,0.7) !important; }
+  .text-white\/60 { color: rgba(255,255,255,0.85) !important; }
+}
+
+/* ─── Offline indicator ──────────────────────────────────────── */
+.offline-banner {
+  background: rgba(122, 28, 28, 0.9);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  backdrop-filter: blur(8px);
+}

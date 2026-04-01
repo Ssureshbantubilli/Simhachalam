@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Home",
+    "pradakshina": "Giri Pradakshina",
+    "safety": "Pilgrim Safety",
+    "temple": "Temple",
+    "darshan": "Darshan Booking",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Sri Varaha Lakshmi Narasimha Swamy Temple",
+    "subtitle": "Simhachalam — Where the Divine Abides",
+    "cta_pradakshina": "Begin Giri Pradakshina",
+    "cta_darshan": "Book Darshan"
+  },
+  "pradakshina": {
+    "title": "Giri Pradakshina",
+    "subtitle": "32 KM Sacred Circumambulation",
+    "description": "The Giri Pradakshina is the sacred clockwise circumambulation of Simhachalam Hill — a deeply devotional act of surrender and reverence, not a trek.",
+    "start_label": "Tolipavancham — Sacred Beginning",
+    "distance_label": "Total Distance",
+    "duration_label": "Estimated Duration",
+    "checkpoints": {
+      "tolipavancham": {
+        "name": "Tolipavancham",
+        "subtitle": "Sacred Start — Sankalpam Point",
+        "description": "Devotees break coconut, perform Sankalpam (sacred vow), and begin the clockwise pradakshina. The spiritual journey commences here.",
+        "ritual": "Break coconut • Perform Sankalpam • Begin clockwise circumambulation"
+      },
+      "hanuman": {
+        "name": "Hanuman Temple",
+        "subtitle": "Divine Protector",
+        "description": "Seek the blessings of Lord Hanuman for strength and protection on the sacred journey ahead."
+      },
+      "mudasarlova": {
+        "name": "Mudasarlova",
+        "subtitle": "Sacred Water Body",
+        "description": "A spiritually significant water body along the route. Devotees offer prayers here."
+      },
+      "adavivaram": {
+        "name": "Adavivaram",
+        "subtitle": "Forest Passage",
+        "description": "The forested stretch of the pradakshina route. A serene and meditative passage."
+      },
+      "final_steps": {
+        "name": "1000 Sacred Steps",
+        "subtitle": "Ascent to the Lord",
+        "description": "The final ascent to the temple — 1000 steps leading to the divine darshan of Sri Varaha Lakshmi Narasimha Swamy."
+      }
+    },
+    "checklist": {
+      "title": "Pilgrim Checklist",
+      "coconut": "Coconut (for Sankalpam)",
+      "camphor": "Camphor",
+      "water": "Water (at least 2L)",
+      "attire": "Traditional attire",
+      "footwear": "Comfortable footwear",
+      "offerings": "Flower offerings"
+    },
+    "alerts": {
+      "hydration": "Stay hydrated — drink water every 30 minutes",
+      "milestone_5": "5 KM milestone reached — excellent progress!",
+      "milestone_10": "10 KM completed — you are halfway!",
+      "rest": "Rest point ahead — take a brief pause",
+      "sunrise": "Pradakshina is most auspicious during Brahma Muhurta (4–6 AM)"
+    },
+    "crowd": {
+      "title": "Crowd Intelligence",
+      "low": "Low crowd density",
+      "moderate": "Moderate — proceed with awareness",
+      "high": "High density — consider timing adjustment",
+      "congestion": "Congestion alert at {{location}}"
+    }
+  },
+  "rituals": {
+    "title": "Ritual Guide",
+    "sankalpam": {
+      "title": "Sankalpam",
+      "description": "The sacred vow taken at Tolipavancham before beginning the pradakshina. Performed facing east at dawn."
+    },
+    "narasimha_kavacham": {
+      "title": "Narasimha Kavacham",
+      "description": "The protective chant of Lord Narasimha — recited throughout the pradakshina for divine protection."
+    },
+    "vishnu_sahasranamam": {
+      "title": "Vishnu Sahasranamam",
+      "description": "The thousand names of Lord Vishnu — recited continuously during the circumambulation."
+    }
+  },
+  "safety": {
+    "title": "Pilgrim Safety",
+    "rfid": {
+      "title": "RFID Pilgrim Registration",
+      "register": "Register Pilgrim",
+      "track": "Track Location",
+      "id_label": "RFID ID",
+      "name_label": "Pilgrim Name",
+      "phone_label": "Emergency Contact"
+    },
+    "missing": {
+      "title": "Missing Person Assistance",
+      "search_placeholder": "Enter RFID ID or Name",
+      "last_location": "Last Known Location",
+      "last_scan": "Last Scanned",
+      "route_section": "Route Section"
+    },
+    "emergency": {
+      "medical": "Medical Help",
+      "police": "Police Helpline",
+      "temple": "Temple Helpline"
+    }
+  },
+  "temple": {
+    "title": "Temple",
+    "moola_virat": {
+      "title": "Moola Virat — The Sacred Form",
+      "chandanam": "The presiding deity is covered in sandalwood paste year-round, appearing as a Shivalingam.",
+      "nijaroopa": "Nijaroopa Darshan is granted only on Akshaya Tritiya — the true form of Sri Varaha Lakshmi Narasimha Swamy."
+    },
+    "story": {
+      "title": "The Sacred Story",
+      "prahlada": "Prahlada & Narasimha",
+      "description": "The divine legend of devotee Prahlada and the emergence of Lord Narasimha from the pillar to vanquish Hiranyakashipu."
+    },
+    "festivals": {
+      "title": "Sacred Festivals",
+      "chandanotsavam": {
+        "name": "Chandanotsavam",
+        "description": "Festival of sandalwood paste — the deity is bathed in fragrant chandanam."
+      },
+      "kalyanotsavam": {
+        "name": "Kalyanotsavam",
+        "description": "Celestial wedding celebration of the Lord."
+      },
+      "giri_pradakshina": {
+        "name": "Giri Pradakshina Mahotsavam",
+        "description": "The grand festival of sacred circumambulation — lakhs of devotees participate."
+      }
+    }
+  },
+  "offline": {
+    "title": "Offline Mode Active",
+    "description": "You are using cached data. Some real-time features may be unavailable.",
+    "last_sync": "Last synced"
+  },
+  "common": {
+    "km": "KM",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "loading": "Loading...",
+    "search": "Search",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "view_map": "View on Map",
+    "share": "Share Location"
+  }
+}
