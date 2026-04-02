@@ -140,21 +140,21 @@ export default function PradakshinaStepper() {
   const progressPercent = (activeCheckpoint / (CHECKPOINTS.length - 1)) * 100;
 
   return (
-    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 py-8 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto w-full md:px-8 lg:px-16">
+    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 sm:px-6 lg:px-8 py-8 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
       {/* Header */}
       <div className="mb-8 text-center">
-        <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-2 font-body">
+        <p className="text-[#D4AF37] text-xs sm:text-sm tracking-[0.3em] uppercase mb-2 font-body">
           Sri Varaha Lakshmi Narasimha Swamy Temple
         </p>
-        <h1 className="font-display text-3xl font-bold text-white mb-1">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-1">
           Giri Pradakshina
         </h1>
-        <p className="text-white/40 text-sm font-body">32 KM Sacred Circumambulation</p>
+        <p className="text-white/40 text-sm sm:text-base font-body">32 KM Sacred Circumambulation</p>
       </div>
 
       {/* Progress Overview Card */}
       <div
-        className="relative rounded-2xl p-5 mb-8 border border-[#D4AF37]/20 overflow-hidden"
+        className="relative rounded-2xl p-5 sm:p-6 lg:p-8 mb-8 border border-[#D4AF37]/20 overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1a1208 0%, #0F0F0F 100%)' }}
       >
         {/* Glow effect */}
@@ -179,15 +179,15 @@ export default function PradakshinaStepper() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4">
             {[
               { label: 'Checkpoint', value: `${activeCheckpoint + 1}/5` },
               { label: 'Remaining', value: `${32 - CHECKPOINTS[activeCheckpoint].km} KM` },
               { label: 'Status', value: pradakshinaStarted ? 'Active' : 'Ready' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-white font-display font-semibold text-base">{stat.value}</p>
-                <p className="text-white/40 text-xs font-body mt-0.5">{stat.label}</p>
+                <p className="text-white font-display font-semibold text-base sm:text-lg">{stat.value}</p>
+                <p className="text-white/40 text-xs sm:text-sm font-body mt-0.5">{stat.label}</p>
               </div>
             ))}
           </div>

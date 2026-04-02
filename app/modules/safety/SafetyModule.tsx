@@ -19,20 +19,20 @@ export default function SafetyModule() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 py-8 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto w-full md:px-8 lg:px-16">
+    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 sm:px-6 lg:px-8 py-8 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
       <div className="mb-8 text-center">
-        <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-2">Simhachalam Temple</p>
-        <h1 className="font-display text-2xl font-bold text-white">Pilgrim Safety</h1>
-        <p className="text-white/40 text-sm mt-1">RFID-based tracking & emergency assistance</p>
+        <p className="text-[#D4AF37] text-xs sm:text-sm tracking-[0.3em] uppercase mb-2">Simhachalam Temple</p>
+        <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Pilgrim Safety</h1>
+        <p className="text-white/40 text-sm sm:text-base mt-1">RFID-based tracking & emergency assistance</p>
       </div>
 
       {/* Tab navigation */}
-      <div className="flex gap-1 p-1 bg-white/5 rounded-xl mb-8">
+      <div className="flex gap-1 p-1 bg-white/5 rounded-xl mb-8 max-w-lg mx-auto">
         {(['register', 'search', 'emergency'] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`flex-1 py-2.5 text-xs font-body rounded-lg capitalize transition-all ${
+            className={`flex-1 py-2.5 sm:py-3 text-xs sm:text-sm font-body rounded-lg capitalize transition-all ${
               tab === t ? 'bg-[#7A1C1C] text-white' : 'text-white/50'
             }`}
           >
@@ -44,7 +44,7 @@ export default function SafetyModule() {
       {/* Register tab */}
       {tab === 'register' && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-lg mx-auto">
             <div>
               <label className="text-white/60 text-xs font-body uppercase tracking-wider mb-2 block">
                 Pilgrim Name
@@ -151,8 +151,8 @@ export default function SafetyModule() {
 
       {/* Emergency tab */}
       {tab === 'emergency' && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
-          <p className="text-white/50 text-sm font-body text-center mb-6">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4 max-w-lg mx-auto">
+          <p className="text-white/50 text-sm sm:text-base font-body text-center mb-6">
             Tap to call emergency services immediately
           </p>
           {[

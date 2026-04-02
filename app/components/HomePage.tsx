@@ -107,25 +107,44 @@ export default function HomePage({ locale }: { locale: string }) {
 
   // ─── Home ─────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#0F0F0F] pb-24">
+    <div className="min-h-screen bg-[#0F0F0F] pb-24 lg:pb-8">
       {/* Offline Banner */}
       {isOffline && (
-        <div className="offline-banner py-2 px-4 text-center text-xs font-body text-[#F5E6C8]">
+        <div className="offline-banner py-2 px-4 text-center text-xs sm:text-sm font-body text-[#F5E6C8]">
           ⚡ {t('offline.title')} — {t('offline.description')}
         </div>
       )}
 
       {/* Top bar */}
-      <div className="flex justify-between items-center px-4 py-4 sticky top-0 z-30 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-white/5">
+      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-30 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-white/5 max-w-7xl mx-auto w-full">
         <div>
-          <p className="text-[#D4AF37] text-xs tracking-[0.25em] uppercase font-body">Simhachalam</p>
+          <p className="text-[#D4AF37] text-xs sm:text-sm tracking-[0.25em] uppercase font-body">Simhachalam</p>
           <p className="text-white/40 text-xs font-body">Visakhapatnam</p>
+        </div>
+        {/* Desktop nav links */}
+        <div className="hidden lg:flex items-center gap-6">
+          {[
+            { id: 'home' as Tab, label: 'Home' },
+            { id: 'pradakshina' as Tab, label: 'Pradakshina' },
+            { id: 'safety' as Tab, label: 'Safety' },
+            { id: 'temple' as Tab, label: 'Temple' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`text-sm font-body transition-colors ${
+                activeTab === tab.id ? 'text-[#D4AF37]' : 'text-white/50 hover:text-white/80'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
         <LanguageSwitcher currentLocale={locale} />
       </div>
 
       {/* Hero */}
-      <div className="relative overflow-hidden px-4 pt-10 pb-14">
+      <div className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-10 pb-14 max-w-7xl mx-auto">
         {/* Background particles */}
         <div className="absolute inset-0 pointer-events-none">
           {Array.from({ length: 20 }).map((_, i) => (
@@ -147,18 +166,18 @@ export default function HomePage({ locale }: { locale: string }) {
             transition={{ duration: 0.8 }}
           >
             {/* Om symbol */}
-            <p className="text-[#D4AF37] text-4xl mb-4 text-center">ॐ</p>
+            <p className="text-[#D4AF37] text-4xl md:text-5xl lg:text-6xl mb-4 text-center">ॐ</p>
 
-            <h1 className="font-display text-2xl font-bold text-white text-center leading-tight mb-2">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center leading-tight mb-2">
               {t('hero.title')}
             </h1>
-            <p className="text-white/50 text-sm text-center font-body mb-6">
+            <p className="text-white/50 text-sm sm:text-base lg:text-lg text-center font-body mb-6 max-w-2xl mx-auto">
               {t('hero.subtitle')}
             </p>
 
             {/* Sanskrit shloka */}
-            <div className="border border-[#D4AF37]/20 rounded-xl p-4 mb-6 bg-[#D4AF37]/5">
-              <p className="shloka text-center whitespace-pre-line text-sm">
+            <div className="border border-[#D4AF37]/20 rounded-xl p-4 md:p-6 mb-6 bg-[#D4AF37]/5 max-w-xl mx-auto">
+              <p className="shloka text-center whitespace-pre-line text-sm md:text-base">
                 {NARASIMHA_SHLOKA}
               </p>
             </div>
@@ -166,21 +185,21 @@ export default function HomePage({ locale }: { locale: string }) {
 
           {/* Primary CTAs */}
           <motion.div
-            className="flex gap-3"
+            className="flex gap-3 sm:gap-4 max-w-lg mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
             <button
               onClick={() => setActiveTab('pradakshina')}
-              className="flex-1 py-4 rounded-xl font-display font-semibold text-sm tracking-wide text-[#F5E6C8] border border-[#D4AF37]/40 glow-gold transition-all"
+              className="flex-1 py-4 sm:py-5 rounded-xl font-display font-semibold text-sm sm:text-base tracking-wide text-[#F5E6C8] border border-[#D4AF37]/40 glow-gold transition-all"
               style={{ background: 'linear-gradient(135deg, #7A1C1C, #9b2226)' }}
             >
               🚶 {t('hero.cta_pradakshina')}
             </button>
             <button
               onClick={() => setActiveTab('temple')}
-              className="flex-1 py-4 rounded-xl font-display font-semibold text-sm tracking-wide text-[#D4AF37] border border-[#D4AF37]/20 bg-[#D4AF37]/5"
+              className="flex-1 py-4 sm:py-5 rounded-xl font-display font-semibold text-sm sm:text-base tracking-wide text-[#D4AF37] border border-[#D4AF37]/20 bg-[#D4AF37]/5"
             >
               🛕 {t('hero.cta_darshan')}
             </button>
@@ -189,9 +208,9 @@ export default function HomePage({ locale }: { locale: string }) {
       </div>
 
       {/* Live status cards */}
-      <div className="px-4 mb-6">
-        <p className="text-white/40 text-xs font-body uppercase tracking-wider mb-3">Live Status</p>
-        <div className="grid grid-cols-2 gap-3">
+      <div className="px-4 sm:px-6 lg:px-8 mb-6 max-w-7xl mx-auto">
+        <p className="text-white/40 text-xs sm:text-sm font-body uppercase tracking-wider mb-3">Live Status</p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <div className="glass-card p-4">
             <p className="text-white/50 text-xs font-body mb-1">Pradakshina Status</p>
             <div className="flex items-center gap-2">
@@ -217,9 +236,9 @@ export default function HomePage({ locale }: { locale: string }) {
       </div>
 
       {/* Quick feature grid */}
-      <div className="px-4 mb-6">
-        <p className="text-white/40 text-xs font-body uppercase tracking-wider mb-3">Pilgrim Services</p>
-        <div className="grid grid-cols-2 gap-3">
+      <div className="px-4 sm:px-6 lg:px-8 mb-6 max-w-7xl mx-auto">
+        <p className="text-white/40 text-xs sm:text-sm font-body uppercase tracking-wider mb-3">Pilgrim Services</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {[
             { icon: '🗺️', title: 'Route Guide', desc: '32 KM step-by-step', tab: 'pradakshina' as Tab },
             { icon: '🆔', title: 'RFID Safety', desc: 'Pilgrim tracking', tab: 'safety' as Tab },
@@ -229,26 +248,26 @@ export default function HomePage({ locale }: { locale: string }) {
             <motion.button
               key={item.title}
               onClick={() => setActiveTab(item.tab)}
-              className="glass-card p-4 text-left"
+              className="glass-card p-4 sm:p-5 text-left"
               whileTap={{ scale: 0.97 }}
             >
-              <p className="text-2xl mb-2">{item.icon}</p>
-              <p className="text-white font-display font-semibold text-sm">{item.title}</p>
-              <p className="text-white/40 text-xs font-body mt-0.5">{item.desc}</p>
+              <p className="text-2xl sm:text-3xl mb-2">{item.icon}</p>
+              <p className="text-white font-display font-semibold text-sm sm:text-base">{item.title}</p>
+              <p className="text-white/40 text-xs sm:text-sm font-body mt-0.5">{item.desc}</p>
             </motion.button>
           ))}
         </div>
       </div>
 
       {/* Festivals banner */}
-      <div className="px-4">
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div
-          className="rounded-2xl p-5 border border-[#D4AF37]/20 overflow-hidden relative"
+          className="rounded-2xl p-5 sm:p-6 lg:p-8 border border-[#D4AF37]/20 overflow-hidden relative"
           style={{ background: 'linear-gradient(135deg, #1a1208 0%, #0F0F0F 100%)' }}
         >
-          <p className="text-[#D4AF37] text-xs uppercase tracking-wider font-body mb-2">Upcoming Festival</p>
-          <h3 className="font-display text-lg font-bold text-white mb-1">Chandanotsavam</h3>
-          <p className="text-white/50 text-sm font-body">
+          <p className="text-[#D4AF37] text-xs sm:text-sm uppercase tracking-wider font-body mb-2">Upcoming Festival</p>
+          <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1">Chandanotsavam</h3>
+          <p className="text-white/50 text-sm sm:text-base font-body max-w-2xl">
             The sacred sandalwood festival — darshan of the deity bathed in fragrant chandanam.
           </p>
         </div>
@@ -262,11 +281,11 @@ export default function HomePage({ locale }: { locale: string }) {
 // ─── Top bar for inner pages ──────────────────────────────────────────────────
 function TopBar({ locale, onBack, title }: { locale: string; onBack: () => void; title: string }) {
   return (
-    <div className="flex items-center justify-between px-4 py-4 sticky top-0 z-30 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-white/5">
-      <button onClick={onBack} className="w-9 h-9 rounded-xl border border-white/10 flex items-center justify-center text-white/60 text-sm">
+    <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-30 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-white/5 max-w-7xl mx-auto w-full">
+      <button onClick={onBack} className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-white/10 flex items-center justify-center text-white/60 text-sm">
         ←
       </button>
-      <p className="font-display font-semibold text-white text-base">{title}</p>
+      <p className="font-display font-semibold text-white text-base sm:text-lg lg:text-xl">{title}</p>
       <LanguageSwitcher currentLocale={locale} />
     </div>
   );
@@ -282,8 +301,8 @@ function BottomNav({ active, onChange }: { active: Tab; onChange: (t: Tab) => vo
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-[#0F0F0F]/95 backdrop-blur-md border-t border-white/5 safe-bottom">
-      <div className="flex max-w-md mx-auto">
+    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-[#0F0F0F]/95 backdrop-blur-md border-t border-white/5 safe-bottom lg:hidden">
+      <div className="flex max-w-md sm:max-w-lg mx-auto">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -314,15 +333,15 @@ function TempleModule() {
   const [expandedFestival, setExpandedFestival] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 py-8 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto w-full md:px-8 lg:px-16">
+    <div className="min-h-screen bg-[#0F0F0F] text-white px-4 sm:px-6 lg:px-8 py-8 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
       {/* Moola Virat */}
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-        className="glass-card p-5 mb-5"
+        className="glass-card p-5 sm:p-6 lg:p-8 mb-5"
       >
-        <p className="text-[#D4AF37] text-xs uppercase tracking-wider font-body mb-2">Moola Virat</p>
-        <h2 className="font-display text-xl font-bold text-white mb-3">{t('moola_virat.title')}</h2>
-        <p className="text-white/60 text-sm font-body leading-relaxed mb-3">{t('moola_virat.chandanam')}</p>
+        <p className="text-[#D4AF37] text-xs sm:text-sm uppercase tracking-wider font-body mb-2">Moola Virat</p>
+        <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">{t('moola_virat.title')}</h2>
+        <p className="text-white/60 text-sm sm:text-base font-body leading-relaxed mb-3">{t('moola_virat.chandanam')}</p>
         <div className="border border-[#D4AF37]/20 rounded-lg p-3 bg-[#D4AF37]/5">
           <p className="text-[#F5E6C8] text-xs font-body leading-relaxed">
             ✨ <span className="text-[#D4AF37] font-semibold">Nijaroopa Darshan:</span> {t('moola_virat.nijaroopa')}
@@ -361,8 +380,8 @@ function TempleModule() {
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
       >
-        <p className="text-white/40 text-xs uppercase tracking-wider font-body mb-3">{t('festivals.title')}</p>
-        <div className="grid grid-cols-2 gap-3">
+        <p className="text-white/40 text-xs sm:text-sm uppercase tracking-wider font-body mb-3">{t('festivals.title')}</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {festivals.map((festival) => (
             <button
               key={festival.key}

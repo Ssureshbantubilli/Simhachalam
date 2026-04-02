@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#0F0F0F",
   "theme_color": "#7A1C1C",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "categories": ["travel", "lifestyle", "navigation"],
   "lang": "en",
   "icons": [
